@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cozy Life - Life Management App</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Room Scene Screen -->
+        <div id="room-scene" class="screen active">
+            <div class="app-header">
+                <h1>🏡 Cozy Life</h1>
+            </div>
+            <div class="room-scene">
+                <img src="../assets/designs/room_scene.png" 
+                     alt="Cozy Room" 
+                     class="room-image"
+                     id="room-image">
+                
+                <!-- Interactive Hotspots with onclick -->
+                <div class="hotspot hotspot-bookshelf" 
+                     onclick="navigateToScreen('book-tracker')"
+                     title="Tap for Book Tracker">
+                </div>
+                
+                <div class="hotspot hotspot-calendar" 
+                     onclick="navigateToScreen('calendar')"
+                     title="Tap for Calendar">
+                </div>
+                
+                <div class="hotspot hotspot-plants" 
+                     onclick="navigateToScreen('plant-tracker')"
+                     title="Tap for Plant Tracker">
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Tracker Screen -->
+        <div id="book-tracker" class="screen">
+            <div class="app-header">
+                <button class="back-button" onclick="navigateToRoom()">←</button>
+                <h1>📚 My Books</h1>
+            </div>
+            <div class="tracker-content">
+                <div class="tabs">
+                    <button class="tab book-tab active" data-status="reading">Reading</button>
+                    <button class="tab book-tab" data-status="toRead">To Read</button>
+                    <button class="tab book-tab" data-status="completed">Completed</button>
+                </div>
+                <div id="book-list"></div>
+            </div>
+            <button class="fab" aria-label="Add new book">+</button>
+        </div>
+
+        <!-- Calendar Screen -->
+        <div id="calendar" class="screen">
+            <div class="app-header">
+                <button class="back-button" onclick="navigateToRoom()">←</button>
+                <h1>📅 My Calendar</h1>
+            </div>
+            <div class="tracker-content">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2 style="color: #8B7355; font-size: 20px;">October 2024</h2>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+                
+                <div style="margin-top: 30px;">
+                    <h3 style="color: #6d5a45; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <span>🌿</span>
+                        Today's Events
+                        <span>🌿</span>
+                    </h3>
+                    <div id="event-list"></div>
+                </div>
+            </div>
+            <button class="fab" aria-label="Add new event">+</button>
+        </div>
+
+        <!-- Plant Tracker Screen -->
+        <div id="plant-tracker" class="screen">
+            <div class="app-header">
+                <button class="back-button" onclick="navigateToRoom()">←</button>
+                <h1>🌱 My Plants</h1>
+            </div>
+            <div class="tracker-content">
+                <div id="plant-list"></div>
+            </div>
+            <button class="fab" aria-label="Add new plant">+</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

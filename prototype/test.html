@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hotspot Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .hotspot {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.3);
+            border: 3px solid red;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .hotspot:active {
+            background: rgba(255, 0, 0, 0.6);
+        }
+        .hotspot-bookshelf {
+            top: 15%;
+            left: 2%;
+            width: 28%;
+            height: 45%;
+        }
+        .hotspot-calendar {
+            top: 10%;
+            right: 2%;
+            width: 22%;
+            height: 28%;
+        }
+        .hotspot-plants {
+            bottom: 18%;
+            right: 5%;
+            width: 22%;
+            height: 28%;
+        }
+        #message {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: green;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <div class="container">
+        <img src="../assets/designs/room_scene.png" alt="Room">
+        <div class="hotspot hotspot-bookshelf" onclick="showMessage('Bookshelf clicked!')">📚</div>
+        <div class="hotspot hotspot-calendar" onclick="showMessage('Calendar clicked!')">📅</div>
+        <div class="hotspot hotspot-plants" onclick="showMessage('Plants clicked!')">🌱</div>
+    </div>
+    <script>
+        function showMessage(text) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
