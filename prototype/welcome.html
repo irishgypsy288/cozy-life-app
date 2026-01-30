@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Cozy Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .welcome-container {
+            max-width: 500px;
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .welcome-icon {
+            text-align: center;
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            color: #8B7355;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-message {
+            color: #3d3d3d;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .instructions {
+            background: #f5f1e8;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .instructions h2 {
+            color: #8B7355;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .instruction-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .instruction-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .instruction-content {
+            flex: 1;
+        }
+        
+        .instruction-title {
+            color: #8B7355;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .instruction-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .closing-message {
+            background: linear-gradient(135deg, #9CAF88 0%, #7a9668 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .get-started-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #8B7355 0%, #6d5a45 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .get-started-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.4);
+        }
+        
+        .get-started-btn:active {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .welcome-icon {
+                font-size: 48px;
+            }
+            
+            .instruction-icon {
+                font-size: 28px;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-icon">🏡</div>
+        
+        <h1>Welcome to Cozy Life!</h1>
+        
+        <p class="welcome-message">
+            We're so glad you're here! Cozy Life is your personal sanctuary for managing life's beautiful moments. 
+            Think of it as your own cozy room where everything you need is just a tap away.
+        </p>
+        
+        <div class="instructions">
+            <h2>How to Get Started</h2>
+            
+            <div class="instruction-item">
+                <div class="instruction-icon">📚</div>
+                <div class="instruction-content">
+                    <div class="instruction-title">Track Your Reading</div>
+                    <div class="instruction-text">
+                        Tap the bookshelf on the left to keep track of books you're reading, want to read, or have finished. 
+                        Watch your reading journey grow!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instruction-item">
+                <div class="instruction-icon">📅</div>
+                <div class="instruction-content">
+                    <div class="instruction-title">Organize Your Days</div>
+                    <div class="instruction-text">
+                        Tap the wall calendar on the right to manage your schedule, set reminders, and never miss important moments.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instruction-item">
+                <div class="instruction-icon">🌱</div>
+                <div class="instruction-content">
+                    <div class="instruction-title">Care for Your Plants</div>
+                    <div class="instruction-text">
+                        Tap the plants to track watering schedules and keep your green friends happy and healthy.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instruction-item">
+                <div class="instruction-icon">🔙</div>
+                <div class="instruction-content">
+                    <div class="instruction-title">Easy Navigation</div>
+                    <div class="instruction-text">
+                        Use the back arrow (←) at the top of any screen to return to your cozy room anytime.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="closing-message">
+            <p>
+                Remember, this is <em>your</em> space. Take your time exploring, and make yourself at home. 
+                We're here to help you organize life in the warmest way possible. ☕✨
+            </p>
+        </div>
+        
+        <a href="index.html" class="get-started-btn">
+            Enter Your Cozy Room
+        </a>
+    </div>
+</body>
+</html>

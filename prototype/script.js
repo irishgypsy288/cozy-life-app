@@ -155,11 +155,31 @@ function navigateToRoom() {
 // Initialize App
 document.addEventListener('DOMContentLoaded', function() {
     console.log('=== APP INITIALIZED ===');
+    
+    // Check if first time user
+    checkFirstTimeUser();
+    
     renderBookTracker();
     renderCalendar();
     renderPlantTracker();
     console.log('=== READY ===');
 });
+
+// Check if first time user
+function checkFirstTimeUser() {
+    const hasVisited = localStorage.getItem('cozylife_visited');
+    
+    if (!hasVisited) {
+        // First time user - show welcome
+        console.log('First time user detected');
+        localStorage.setItem('cozylife_visited', 'true');
+        
+        // Redirect to welcome page if not already there
+        if (!window.location.pathname.includes('welcome.html')) {
+            window.location.href = 'welcome.html';
+        }
+    }
+}
 
 // Book Tracker Functions
 function renderBookTracker() {
