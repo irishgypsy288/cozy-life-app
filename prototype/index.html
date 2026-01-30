@@ -41,38 +41,55 @@
 
         <!-- Book Tracker Screen -->
         <div id="book-tracker" class="screen">
-            <div class="design-overlay">
-                <img src="../assets/designs/book_tracker.png" 
-                     alt="Book Tracker" 
-                     class="design-image">
-                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
-                    ←
-                </button>
+            <div class="app-header cozy-header">
+                <button class="back-button cozy-back" onclick="navigateToRoom()">←</button>
+                <h1 class="cozy-title">My Books</h1>
             </div>
+            <div class="tracker-content cozy-content">
+                <div class="tabs cozy-tabs">
+                    <button class="tab book-tab active cozy-tab" data-status="reading">Reading</button>
+                    <button class="tab book-tab cozy-tab" data-status="toRead">To Read</button>
+                    <button class="tab book-tab cozy-tab" data-status="completed">Completed</button>
+                </div>
+                <div id="book-list" class="cozy-list"></div>
+            </div>
+            <button class="fab cozy-fab" aria-label="Add new book">+</button>
         </div>
 
         <!-- Calendar Screen -->
         <div id="calendar" class="screen">
-            <div class="design-overlay">
-                <img src="../assets/designs/calendar.png" 
-                     alt="Calendar" 
-                     class="design-image">
-                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
-                    ←
-                </button>
+            <div class="app-header cozy-header">
+                <button class="back-button cozy-back" onclick="navigateToRoom()">←</button>
+                <h1 class="cozy-title">My Calendar</h1>
             </div>
+            <div class="tracker-content cozy-content">
+                <div class="calendar-month-header">
+                    <h2 class="cozy-month-title">October 2024</h2>
+                </div>
+                <div id="calendar-grid" class="calendar-grid cozy-calendar"></div>
+                
+                <div class="events-section">
+                    <h3 class="cozy-section-title">
+                        <span class="leaf-icon">🌿</span>
+                        Today's Events
+                        <span class="leaf-icon">🌿</span>
+                    </h3>
+                    <div id="event-list" class="cozy-event-list"></div>
+                </div>
+            </div>
+            <button class="fab cozy-fab" aria-label="Add new event">+</button>
         </div>
 
         <!-- Plant Tracker Screen -->
         <div id="plant-tracker" class="screen">
-            <div class="design-overlay">
-                <img src="../assets/designs/plant_tracker.png" 
-                     alt="Plant Tracker" 
-                     class="design-image">
-                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
-                    ←
-                </button>
+            <div class="app-header cozy-header">
+                <button class="back-button cozy-back" onclick="navigateToRoom()">←</button>
+                <h1 class="cozy-title">My Plants</h1>
             </div>
+            <div class="tracker-content cozy-content">
+                <div id="plant-list" class="cozy-list"></div>
+            </div>
+            <button class="fab cozy-fab" aria-label="Add new plant">+</button>
         </div>
 
     </div>
