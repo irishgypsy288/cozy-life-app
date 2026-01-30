@@ -41,55 +41,38 @@
 
         <!-- Book Tracker Screen -->
         <div id="book-tracker" class="screen">
-            <div class="app-header">
-                <button class="back-button" onclick="navigateToRoom()">←</button>
-                <h1>📚 My Books</h1>
+            <div class="design-overlay">
+                <img src="../assets/designs/book_tracker.png" 
+                     alt="Book Tracker" 
+                     class="design-image">
+                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
+                    ←
+                </button>
             </div>
-            <div class="tracker-content">
-                <div class="tabs">
-                    <button class="tab book-tab active" data-status="reading">Reading</button>
-                    <button class="tab book-tab" data-status="toRead">To Read</button>
-                    <button class="tab book-tab" data-status="completed">Completed</button>
-                </div>
-                <div id="book-list"></div>
-            </div>
-            <button class="fab" aria-label="Add new book">+</button>
         </div>
 
         <!-- Calendar Screen -->
         <div id="calendar" class="screen">
-            <div class="app-header">
-                <button class="back-button" onclick="navigateToRoom()">←</button>
-                <h1>📅 My Calendar</h1>
+            <div class="design-overlay">
+                <img src="../assets/designs/calendar.png" 
+                     alt="Calendar" 
+                     class="design-image">
+                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
+                    ←
+                </button>
             </div>
-            <div class="tracker-content">
-                <div style="text-align: center; margin-bottom: 20px;">
-                    <h2 style="color: #8B7355; font-size: 20px;">October 2024</h2>
-                </div>
-                <div id="calendar-grid" class="calendar-grid"></div>
-                
-                <div style="margin-top: 30px;">
-                    <h3 style="color: #6d5a45; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                        <span>🌿</span>
-                        Today's Events
-                        <span>🌿</span>
-                    </h3>
-                    <div id="event-list"></div>
-                </div>
-            </div>
-            <button class="fab" aria-label="Add new event">+</button>
         </div>
 
         <!-- Plant Tracker Screen -->
         <div id="plant-tracker" class="screen">
-            <div class="app-header">
-                <button class="back-button" onclick="navigateToRoom()">←</button>
-                <h1>🌱 My Plants</h1>
+            <div class="design-overlay">
+                <img src="../assets/designs/plant_tracker.png" 
+                     alt="Plant Tracker" 
+                     class="design-image">
+                <button class="back-button-overlay" onclick="navigateToRoom()" aria-label="Back to room">
+                    ←
+                </button>
             </div>
-            <div class="tracker-content">
-                <div id="plant-list"></div>
-            </div>
-            <button class="fab" aria-label="Add new plant">+</button>
         </div>
 
     </div>
