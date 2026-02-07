@@ -366,13 +366,11 @@ let currentVisitorIndex = 0;
 let visitorTimeout = null;
 
 const natureVisitors = [
-    { emoji: '🐦', type: 'bird', name: 'A little bird' },
-    { emoji: '🐿️', type: 'squirrel', name: 'A curious squirrel' },
-    { emoji: '🐦🐦', type: 'bird', name: 'A pair of birds' },
-    { emoji: '🦋', type: 'butterfly', name: 'A butterfly' },
-    { emoji: '🐦‍⬛', type: 'bird', name: 'A blackbird' },
-    { emoji: '🐿️🌰', type: 'squirrel', name: 'A squirrel with an acorn' },
-    { emoji: '🦜', type: 'bird', name: 'A colorful bird' }
+    { image: 'assets/nature/bird1.png', type: 'bird', name: 'A little bluebird', size: 70 },
+    { image: 'assets/nature/squirrel.png', type: 'squirrel', name: 'A curious squirrel', size: 85 },
+    { image: 'assets/nature/bird_pair.png', type: 'bird', name: 'A pair of birds', size: 95 },
+    { image: 'assets/nature/butterfly.png', type: 'butterfly', name: 'A butterfly', size: 60 },
+    { image: 'assets/nature/cardinal.png', type: 'bird', name: 'A cardinal', size: 75 }
 ];
 
 function showNatureVisitor() {
@@ -386,8 +384,8 @@ function showNatureVisitor() {
     // Get current visitor
     const visitor = natureVisitors[currentVisitorIndex];
     
-    // Set the emoji
-    visitorElement.textContent = visitor.emoji;
+    // Set the image
+    visitorElement.innerHTML = `<img src="${visitor.image}" alt="${visitor.name}" style="width: ${visitor.size}px; height: ${visitor.size}px;">`;
     
     // Remove all animation classes
     visitorElement.className = 'nature-visitor';
@@ -408,10 +406,10 @@ function showNatureVisitor() {
         clearTimeout(visitorTimeout);
     }
     
-    // Schedule departure after 3 seconds
+    // Schedule departure after 4 seconds (longer to appreciate the art)
     visitorTimeout = setTimeout(() => {
         hideNatureVisitor(visitor.type);
-    }, 3000);
+    }, 4000);
     
     // Move to next visitor for next time
     currentVisitorIndex = (currentVisitorIndex + 1) % natureVisitors.length;
@@ -436,5 +434,6 @@ function hideNatureVisitor(type) {
     setTimeout(() => {
         visitorElement.classList.remove('show');
         visitorElement.className = 'nature-visitor';
-    }, 1000);
+        visitorElement.innerHTML = '';
+    }, 1200);
 }
