@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cozy Life - Life Management App</title>
-    <link rel="stylesheet" href="styles.css">
     <script>
         // Always redirect to welcome page first (demo mode)
         // Check if we're coming from welcome page
         const urlParams = new URLSearchParams(window.location.search);
         if (!urlParams.has('from_welcome')) {
-            window.location.href = 'welcome.html';
+            window.location.replace('welcome.html');
         }
     </script>
+    <link rel="stylesheet" href="styles.css">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
