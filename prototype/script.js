@@ -120,16 +120,13 @@ const plantsData = [
 
 // GLOBAL Navigation Functions - MUST be outside DOMContentLoaded
 function navigateToScreen(screenId) {
-    console.log('=== NAVIGATING TO:', screenId, '===');
     
     // Hide all screens
     const allScreens = document.querySelectorAll('.screen');
-    console.log('Found screens:', allScreens.length);
     
     allScreens.forEach(screen => {
         screen.classList.remove('active');
         screen.style.display = 'none';
-        console.log('Hiding screen:', screen.id);
     });
     
     // Show target screen
@@ -138,23 +135,19 @@ function navigateToScreen(screenId) {
         targetScreen.classList.add('active');
         targetScreen.style.display = 'block';
         currentScreen = screenId;
-        console.log('✓ Successfully showing screen:', screenId);
         
         // Scroll to top
         window.scrollTo(0, 0);
     } else {
-        console.error('✗ Screen not found:', screenId);
     }
 }
 
 function navigateToRoom() {
-    console.log('Navigating back to room');
     navigateToScreen('room-scene');
 }
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== APP INITIALIZED ===');
     
     // Check if first time user
     checkFirstTimeUser();
@@ -163,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderBookTracker();
     renderCalendar();
     renderPlantTracker();
-    console.log('=== READY ===');
 });
 
 // Check if first time user
@@ -172,7 +164,6 @@ function checkFirstTimeUser() {
     
     if (!hasVisited) {
         // First time user - show welcome
-        console.log('First time user detected');
         localStorage.setItem('cozylife_visited', 'true');
         
         // Redirect to welcome page if not already there
