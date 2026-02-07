@@ -360,3 +360,81 @@ function waterPlant(plantId) {
         renderPlantTracker();
     }
 }
+
+// Nature Visitor Feature
+let currentVisitorIndex = 0;
+let visitorTimeout = null;
+
+const natureVisitors = [
+    { emoji: '🐦', type: 'bird', name: 'A little bird' },
+    { emoji: '🐿️', type: 'squirrel', name: 'A curious squirrel' },
+    { emoji: '🐦🐦', type: 'bird', name: 'A pair of birds' },
+    { emoji: '🦋', type: 'butterfly', name: 'A butterfly' },
+    { emoji: '🐦‍⬛', type: 'bird', name: 'A blackbird' },
+    { emoji: '🐿️🌰', type: 'squirrel', name: 'A squirrel with an acorn' },
+    { emoji: '🦜', type: 'bird', name: 'A colorful bird' }
+];
+
+function showNatureVisitor() {
+    const visitorElement = document.getElementById('nature-visitor');
+    
+    // If there's already a visitor, don't show another
+    if (visitorElement.classList.contains('show')) {
+        return;
+    }
+    
+    // Get current visitor
+    const visitor = natureVisitors[currentVisitorIndex];
+    
+    // Set the emoji
+    visitorElement.textContent = visitor.emoji;
+    
+    // Remove all animation classes
+    visitorElement.className = 'nature-visitor';
+    
+    // Add entrance animation based on type
+    setTimeout(() => {
+        if (visitor.type === 'bird') {
+            visitorElement.classList.add('bird-landing', 'show');
+        } else if (visitor.type === 'squirrel') {
+            visitorElement.classList.add('squirrel-jumping', 'show');
+        } else if (visitor.type === 'butterfly') {
+            visitorElement.classList.add('butterfly-floating', 'show');
+        }
+    }, 10);
+    
+    // Clear any existing timeout
+    if (visitorTimeout) {
+        clearTimeout(visitorTimeout);
+    }
+    
+    // Schedule departure after 3 seconds
+    visitorTimeout = setTimeout(() => {
+        hideNatureVisitor(visitor.type);
+    }, 3000);
+    
+    // Move to next visitor for next time
+    currentVisitorIndex = (currentVisitorIndex + 1) % natureVisitors.length;
+}
+
+function hideNatureVisitor(type) {
+    const visitorElement = document.getElementById('nature-visitor');
+    
+    // Remove entrance animation and add exit animation
+    if (type === 'bird') {
+        visitorElement.classList.remove('bird-landing');
+        visitorElement.classList.add('bird-leaving');
+    } else if (type === 'squirrel') {
+        visitorElement.classList.remove('squirrel-jumping');
+        visitorElement.classList.add('squirrel-leaving');
+    } else if (type === 'butterfly') {
+        visitorElement.classList.remove('butterfly-floating');
+        visitorElement.classList.add('butterfly-leaving');
+    }
+    
+    // Remove show class and clear after animation
+    setTimeout(() => {
+        visitorElement.classList.remove('show');
+        visitorElement.className = 'nature-visitor';
+    }, 1000);
+}

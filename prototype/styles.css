@@ -157,6 +157,142 @@ body {
     z-index: 1000;
 }
 
+.hotspot-window {
+    position: absolute;
+    top: 18%;
+    left: 38%;
+    width: 24%;
+    height: 28%;
+    background: transparent;
+    border: none;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Nature Visitor Container */
+.nature-visitor {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nature-visitor.show {
+    opacity: 1;
+}
+
+/* Bird Animation */
+@keyframes birdLand {
+    0% {
+        transform: translate(-50%, -150%) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -60%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes birdFlyAway {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100%, -150%) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Squirrel Animation */
+@keyframes squirrelJump {
+    0% {
+        transform: translate(-50%, 100%) scale(0.8);
+        opacity: 0;
+    }
+    40% {
+        transform: translate(-50%, -70%) scale(1.1);
+    }
+    60% {
+        transform: translate(-50%, -40%) scale(0.95);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes squirrelLeave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, 100%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Butterfly Animation */
+@keyframes butterflyFloat {
+    0% {
+        transform: translate(-150%, -50%) scale(0.6) rotate(-10deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -60%) scale(1) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes butterflyFlyAway {
+    0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(150%, -100%) scale(0.6) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+.nature-visitor.bird-landing {
+    animation: birdLand 1s ease-out forwards;
+}
+
+.nature-visitor.bird-leaving {
+    animation: birdFlyAway 0.8s ease-in forwards;
+}
+
+.nature-visitor.squirrel-jumping {
+    animation: squirrelJump 0.8s ease-out forwards;
+}
+
+.nature-visitor.squirrel-leaving {
+    animation: squirrelLeave 0.6s ease-in forwards;
+}
+
+.nature-visitor.butterfly-floating {
+    animation: butterflyFloat 1.2s ease-out forwards;
+}
+
+.nature-visitor.butterfly-leaving {
+    animation: butterflyFlyAway 1s ease-in forwards;
+}
+
 /* Screen Styles */
 .screen {
     display: none;
